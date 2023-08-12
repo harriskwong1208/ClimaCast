@@ -34,7 +34,9 @@ function App() {
         </form>
       </div>
       <div>
-        <pre>{JSON.stringify(data,null,2)}</pre>
+        {data.cod == 200 ? 
+        (<pre>{ JSON.stringify(data,null,2)}</pre>) :
+        (<div>Invalid input</div>)}
       </div>
     </nav>
     
