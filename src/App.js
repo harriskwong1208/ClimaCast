@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState} from "react"; 
 import weather_api from './API_KEY';
 function App() {
 
-  const [Location,setLocation] = useState('tokyo');
-  const [Data,setData] = useState('tokyo');
+  const [Location,setLocation] = useState('japan');
+  const [Data,setData] = useState('japan');
 
-  /*           WHEN TRYING TO RUN            */
+  /*************** WHEN TRYING TO RUN *******************/
   //Replace weather_api and enter your own api key after logging to https://home.openweathermap.org/api_keys
   const api_key = weather_api;
 
@@ -22,25 +21,31 @@ function App() {
 
   return (
     
-    <nav>
-      <div>
-        <h1 className="header">ClimaCast</h1>
-      </div>
-      <div>
-        <form onSubmit={getData}>
+    
+    <body>
+      <nav>
+        <h2 className="header">ClimaCast</h2>
+      </nav>
+      <article>
+        ClimaCast allows users to input their desired 
+        location to get current weather, temperature, 
+        and weather forecast. 
+      </article>
+    
+      <form onSubmit={getData}>
           <label >
             <h2>Enter Location to see forcast</h2>
           </label>
           <input 
           onChange={(e) => setLocation(e.target.value)}
-          className='location' type='text' placeholder='Tokyo'/>
+          className='location' type='text' placeholder='Enter location here'/>
           <button type='submit'>Submit</button>
-        </form>
-      </div>
-      <div>
+      </form>
+      
+      <div className='WeatherData'>
         <Listdata data={Data}/>
       </div>
-    </nav>
+    </body>
     
   );
 }
@@ -48,7 +53,7 @@ function Listdata(props){
   const data = props.data.cod;
   //if blank
   if(data == 400){
-    return ('');
+    return (``);
   }
   else if(data == 404){
     return (
