@@ -1,6 +1,10 @@
 import './App.css';
 import {useState} from "react"; 
 import weather_api from './API_KEY';
+
+
+
+
 function App() {
 
   const [Location,setLocation] = useState('japan');
@@ -20,7 +24,6 @@ function App() {
 
 
   return (
-    
     
     <body>
       <nav>
@@ -51,19 +54,38 @@ function App() {
 }
 function Listdata(props){
   const data = props.data.cod;
+
+  
   //if blank
-  if(data == 400){
-    return (``);
+  if(data === 400){
+    return ('');
   }
-  else if(data == 404){
+  else if(data === 404){
     return (
       'Invalid location'
     );
   }
   else{
-    return (
-      <pre>{ JSON.stringify(props.data,null,2)}</pre>
+    return(
+    <div className='Weather'>
+      <div className='Weather header'>
+        <div className='header location'>{props.data.name}</div>  
+        <div className='header picture'>Picture</div>
+      </div>
+      <div className='WeatherDescription'>
+        <div className='Temperature'>
+          <h1> {props.data.weather[0].main}</h1>
+          </div>
+        <div className='TemperatureDescription'>
+          <h3>{props.data.weather[0].description}</h3>
+        </div>
+        <div className='TemperatureDegree'>
+          {(props.data.main.temp -273.15).toFixed(2)} °C
+        </div>
 
+      </div>
+
+    </div>
     );
   }
 }
