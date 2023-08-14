@@ -49,7 +49,34 @@ form input::placeholder{
   text-align: center;
 }
 
+.Weather .header{
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+}
 
-.WeatherData{
+.header .location{
+  padding-left: 10%;
+  padding-top: 4%;
+}
+
+.header .picture{
+  padding-right: 10%;
+  padding-top: 4%;
+}
+.WeatherDescription{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 100px 100px;
+}
+.Temperature{
+  text-align: center;
+
+}
+.TemperatureDescription{
+  text-align: center;
+}
+.TemperatureDegree{
+  text-align: center;
 
 }
