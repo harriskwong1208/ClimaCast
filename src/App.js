@@ -1,10 +1,16 @@
 import './App.css';
-import {useState} from "react"; 
+import {useState,useEffect,useRef} from "react"; 
 import weather_api from './API_KEY';
-function App() {
 
-  const [Location,setLocation] = useState('japan');
-  const [Data,setData] = useState('japan');
+
+function App() {
+ 
+  
+  const [Location,setLocation] = useState('');
+  const [Data,setData] = useState({});
+
+  
+
 
   /*************** WHEN TRYING TO RUN *******************/
   //Replace weather_api and enter your own api key after logging to https://home.openweathermap.org/api_keys
@@ -14,14 +20,13 @@ function App() {
       e.preventDefault();
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Location}&appid=${api_key}`)
         .then(res => res.json())
-        .then(json => setData(json));
-  
+        .then(json => setData(json))
+        .catch((e)=> console.log(e));
     }
 
 
   return (
-    
-    
+  
     <body>
       <nav>
         <h2 className="header">ClimaCast</h2>
@@ -42,15 +47,16 @@ function App() {
           <button type='submit'>Submit</button>
       </form>
       
-      <div className='WeatherData'>
-        <Listdata data={Data}/>
+      <div  className='WeatherData'>
+        <Listdata data={Data} />
       </div>
     </body>
     
   );
 }
 function Listdata(props){
-  const data = props.data.cod;
+  var data = props.data.cod;
+ 
   //if blank
   if(data == 400){
     return (``);
@@ -69,19 +75,16 @@ function Listdata(props){
       </div>
       <div className='WeatherDescription'>
         <div className='Temperature'>
-          <h1> {props.data.weather[0].main}</h1>
+          <h1>{ Object.keys(props.data).length === 0 ? '' : props.data.weather[0]?.main}</h1>
           </div>
         <div className='TemperatureDescription'>
-          <h3>{props.data.weather[0].description}</h3>
+          <h3>{Object.keys(props.data).length === 0 ? '' :props.data.weather[0]?.description}</h3>
         </div>
         <div className='TemperatureDegree'>
-          {(props.data.main.temp -273.15).toFixed(2)} °C
+          {Object.keys(props.data).length === 0 ? '' :(props.data.main.temp -273.15).toFixed(2)} °C
         </div>
-
       </div>
-
     </div>
-
     );
   }
 }
