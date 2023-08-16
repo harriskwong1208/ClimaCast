@@ -1,5 +1,5 @@
 import './App.css';
-import {useState,useEffect,useRef} from "react"; 
+import {useState,useEffect} from "react"; 
 import weather_api from './API_KEY';
 
 
@@ -56,10 +56,18 @@ function App() {
 }
 function Listdata(props){
   var data = props.data.cod;
+
+  function get_icon(icon){
+    var url = `http://openweathermap.org/img/wn/${icon}.png`;
+  
+    return(
+      <img className='WeatherIcon' src={url}></img>
+    );
+  }
  
   //if blank
   if(data == 400){
-    return (``);
+    return (`Empty`);
   }
   else if(data == 404){
     return (
@@ -70,18 +78,22 @@ function Listdata(props){
     return (
       <div className='Weather'>
       <div className='Weather header'>
-        <div className='header location'>{props.data.name}</div>  
-        <div className='header picture'>Picture</div>
+        <div className='header picture'>
+          { Object.keys(props.data).length === 0 ? '' : 
+          get_icon(props.data.weather[0]?.icon)}
+        </div>
       </div>
       <div className='WeatherDescription'>
         <div className='Temperature'>
-          <h1>{ Object.keys(props.data).length === 0 ? '' : props.data.weather[0]?.main}</h1>
+          <h1>
+            { Object.keys(props.data).length === 0 ? '' : props.data.weather[0]?.main}
+          </h1>  
           </div>
         <div className='TemperatureDescription'>
           <h3>{Object.keys(props.data).length === 0 ? '' :props.data.weather[0]?.description}</h3>
         </div>
         <div className='TemperatureDegree'>
-          {Object.keys(props.data).length === 0 ? '' :(props.data.main.temp -273.15).toFixed(2)} °C
+          {Object.keys(props.data).length === 0 ? '' : `${(props.data.main.temp -273.15).toFixed(2)} °C`} 
         </div>
       </div>
     </div>

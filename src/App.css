@@ -3,20 +3,21 @@
   padding: 0;
 }
 body{
-  background: linear-gradient(#9fff75, #1ec8a6);
+  /* background: linear-gradient(#9fff75, #1ec8a6); */
   background-attachment: fixed; 
+  background-color: #90dae5;
 }
 nav{
  
   background-color: #5399e4;
 }
 nav .header{
-  color: #E8E8E8;
+  color: white;
   padding-top: 0.3%;
   padding-bottom: 0.3%;
 }
 article{
-  background-color: #8585FF ;
+  background-color: #61c3dc;
   padding-top: 5%;
   padding-bottom: 2%;
   padding-left: 30%;
@@ -27,7 +28,7 @@ article{
 
 form{
   text-align: center;
-  background-color: #8585FF;
+  background-color: #61c3dc;
   padding-bottom: 3%;
 }
 form input{
@@ -49,16 +50,14 @@ form input::placeholder{
   text-align: center;
 }
 
+
 .Weather .header{
-  display: flex;
-  justify-content: space-between;
-  height: 200px;
+  text-align: center;
+  border: solid;  
 }
 
-.header .location{
-  padding-left: 10%;
-  padding-top: 4%;
-}
+
+
 
 .header .picture{
   padding-right: 10%;
@@ -79,4 +78,8 @@ form input::placeholder{
 .TemperatureDegree{
   text-align: center;
 
+}
+.WeatherIcon{
+  border: solid;
+  height: 50%;
 }
