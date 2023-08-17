@@ -11,6 +11,10 @@ nav{
  
   background-color: #5399e4;
 }
+article{
+  font-size: larger;
+  font-style: italic;
+}
 nav .header{
   color: white;
   padding-top: 0.3%;
@@ -29,9 +33,12 @@ article{
 form{
   text-align: center;
   background-color: #61c3dc;
-  padding-bottom: 3%;
+  height: 150px;
+  padding-top: 2%;
+  font-style: italic;
 }
 form input{
+
   margin-top: 0.6%;
   margin-right: 0.3%;
   border-radius: 25px;
@@ -50,23 +57,22 @@ form input::placeholder{
   text-align: center;
 }
 
-
+.Weather{
+  padding-top: 1%;
+}
 .Weather .header{
   text-align: center;
-  border: solid;  
 }
 
 
-
-
-.header .picture{
-  padding-right: 10%;
-  padding-top: 4%;
-}
 .WeatherDescription{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 100px 100px;
+  color: white;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #92dce7;
+  font-style: italic;
 }
 .Temperature{
   text-align: center;
@@ -80,6 +86,14 @@ form input::placeholder{
 
 }
 .WeatherIcon{
-  border: solid;
-  height: 50%;
+  height: 60px;
+  margin-bottom: 3%;
+}
+.WeatherInvalidLocation{
+  color: white;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #92dce7;
+  font-style: italic;
+  text-align: center;
+  padding-top: 4%;
 }

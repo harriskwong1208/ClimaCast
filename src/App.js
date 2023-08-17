@@ -67,11 +67,11 @@ function Listdata(props){
  
   //if blank
   if(data == 400){
-    return (`Empty`);
+    return (``);
   }
   else if(data == 404){
     return (
-      'Invalid location'
+      <h1 className='WeatherInvalidLocation'>Invalid Location</h1>
     );
   }
   else{
@@ -90,10 +90,14 @@ function Listdata(props){
           </h1>  
           </div>
         <div className='TemperatureDescription'>
-          <h3>{Object.keys(props.data).length === 0 ? '' :props.data.weather[0]?.description}</h3>
+          <h1>{Object.keys(props.data).length === 0 ? '' :
+          props.data.weather[0]?.description}
+          </h1>
         </div>
         <div className='TemperatureDegree'>
-          {Object.keys(props.data).length === 0 ? '' : `${(props.data.main.temp -273.15).toFixed(2)} °C`} 
+          <h1>{Object.keys(props.data).length === 0 ? '' : 
+          `${(props.data.main.temp -273.15).toFixed(2)} °C`}
+          </h1> 
         </div>
       </div>
     </div>
