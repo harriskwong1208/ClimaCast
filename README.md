@@ -6,3 +6,11 @@ ClimaCast is a weather reporting web application through the utilization of Java
 </p>
 
 ![](public/githubpicture.png)
+
+<b>How to Run:</b>
+<ol>
+  <li> Clone Repository</li>
+  <li> Make sure nodejs and npm are installed on local machine</li>
+  <li> Enter "npm install" in terminal while inside project path.</li>
+  <li> Enter "npm start" in terminal to start up the react app on the browser</li>
+</ol>
