@@ -8,7 +8,7 @@ function App() {
   
   const [Location,setLocation] = useState('');
   const [Data,setData] = useState({});
-
+  
   
 
 
@@ -17,6 +17,9 @@ function App() {
   const api_key = weather_api;
 
     function getData(e){
+
+
+      //https://api.openweathermap.org/data/2.5/forecast?q=liverpool&appid=b846899c971836d60ba5246751690a5a
       e.preventDefault();
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Location}&appid=${api_key}`)
         .then(res => res.json())
@@ -44,7 +47,8 @@ function App() {
           <input 
           onChange={(e) => setLocation(e.target.value)}
           className='location' type='text' placeholder='Enter location here'/>
-          <button type='submit'>Submit</button>
+          <button className='submitbtn' type='submit'>Submit</button>
+ 
       </form>
       
       <div  className='WeatherData'>
@@ -76,31 +80,33 @@ function Listdata(props){
   }
   else{
     return (
-      <div className='Weather'>
-      <div className='Weather header'>
-        <div className='header picture'>
-          { Object.keys(props.data).length === 0 ? '' : 
-          get_icon(props.data.weather[0]?.icon)}
-        </div>
-      </div>
-      <div className='WeatherDescription'>
-        <div className='Temperature'>
-          <h1>
-            { Object.keys(props.data).length === 0 ? '' : props.data.weather[0]?.main}
-          </h1>  
+      <body className='RenderWeather'>
+        <div className='Weather'>
+        <div className='Weather header'>
+          <div className='header picture'>
+            { Object.keys(props.data).length === 0 ? '' : 
+            get_icon(props.data.weather[0]?.icon)}
           </div>
-        <div className='TemperatureDescription'>
-          <h1>{Object.keys(props.data).length === 0 ? '' :
-          props.data.weather[0]?.description}
-          </h1>
         </div>
-        <div className='TemperatureDegree'>
-          <h1>{Object.keys(props.data).length === 0 ? '' : 
-          `${(props.data.main.temp -273.15).toFixed(2)} °C`}
-          </h1> 
+        <div className='WeatherDescription'>
+          <div className='Temperature'>
+            <h1>
+              { Object.keys(props.data).length === 0 ? '' : props.data.weather[0]?.main}
+            </h1>  
+            </div>
+          <div className='TemperatureDescription'>
+            <h1>{Object.keys(props.data).length === 0 ? '' :
+            props.data.weather[0]?.description}
+            </h1>
+          </div>
+          <div className='TemperatureDegree'>
+            <h1>{Object.keys(props.data).length === 0 ? '' : 
+            `${(props.data.main.temp -273.15).toFixed(2)} °C`}
+            </h1> 
+          </div>
         </div>
       </div>
-    </div>
+      </body>
     );
   }
 }

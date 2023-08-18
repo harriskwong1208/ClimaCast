@@ -38,24 +38,31 @@ form{
   font-style: italic;
 }
 form input{
-
+  
   margin-top: 0.6%;
   margin-right: 0.3%;
   border-radius: 25px;
   height: 30px;
   text-align: center;
 }
-form button{
+.submitbtn{
   border-radius: 5px;
   height: 25px;
   width: 50px;
 }
+
+
 form button:active{
   background-color:violet;
 }
 form input::placeholder{
   text-align: center;
 }
+
+.RenderWeather{
+  text-align: center;
+}
+
 
 .Weather{
   padding-top: 1%;
