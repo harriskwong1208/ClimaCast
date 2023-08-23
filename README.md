@@ -1,13 +1,17 @@
 # ClimaCast
 
-<b>Project Overview:</b>
+<h2>What is ClimaCast? </h2>
 <p>
-ClimaCast is a weather reporting web application through the utilization of JavaScript and the React framework. This application allows users to input their desired location and prompting the application to render real-time data like the current weather and temperature specific to the designated location.
-</p>
+ClimaCast is an application for weather updates, enabling users to enter any location. Subsequently, it provides the current weather conditions and real-time temperature for the specified area.</p>
 
 ![](public/githubpicture.png)
 
-<b>How to Run:</b>
+<h2>Technical Overview:</h2>
+<p>
+ClimaCast is a weather reporting web application through the utilization of JavaScript and the React framework. Utilizing the OpenWeatherAPI, the application captures both user input and data from the API, presenting the present weather conditions and temperature.
+</p>
+
+<h2>How to Run:</h2>
 <ol>
   <li> Clone Repository</li>
   <li> Make sure nodejs and npm are installed on local machine</li>
