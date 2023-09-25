@@ -1,13 +1,15 @@
-*{
+
+
+/* *{
   margin: 0;
   padding: 0;
 }
-body{
+body{ */
   /* background: linear-gradient(#9fff75, #1ec8a6); */
-  background-attachment: fixed; 
+  /* background-attachment: fixed; 
   background-color: #90dae5;
-}
-nav{
+} */
+/* nav{
  
   background-color: #5399e4;
 }
@@ -103,4 +105,120 @@ form input::placeholder{
   font-style: italic;
   text-align: center;
   padding-top: 4%;
+} */
+
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background-color: #121212; /* Dark background color */
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+nav {
+  background-color: #000; /* Dark header background color */
+  padding: 10px;
+  text-align: center;
+}
+
+nav .header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1db954; /* Spotify green */
+}
+
+article {
+  font-size: 18px;
+  margin: 20px;
+  text-align: center;
+}
+
+form {
+  background-color: #1c1c1c; /* Dark form background color */
+  text-align: center;
+  padding: 20px;
+}
+
+form label h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+form input {
+  background-color: #282828; /* Dark input background color */
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
+.submitbtn {
+  background-color: #1db954; /* Spotify green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitbtn:hover {
+  background-color: #1ed760; /* Lighter green on hover */
+}
+
+.Weather {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.WeatherDescription {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 100px 100px;
+  color: white;
+  font-size: 18px;
+}
+
+.WeatherIcon {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.Temperature h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.TemperatureDescription h1 {
+  font-style: italic;
+}
+
+.TemperatureDegree h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.WeatherInvalidLocation {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #d32f2f; /* Red background for invalid location */
+}
+
+
+
+
+
+
+
