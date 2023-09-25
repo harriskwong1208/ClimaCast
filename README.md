@@ -10,4 +10,4 @@ ClimaCast is a weather reporting web application through the utilization of Java
 </p>
 
 
-![](ClimaCast/static/interface.png)
+![](static/interface.png)
